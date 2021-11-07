@@ -20,6 +20,8 @@ class AcronymsCell: UITableViewCell {
     }
     
     override func prepareForReuse() {
+        super.prepareForReuse()
+        
         titleLabel.text = nil
     }
     

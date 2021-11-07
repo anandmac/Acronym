@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		02194A05273838D300D1A9D1 /* VariationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02194A04273838D300D1A9D1 /* VariationViewModelTests.swift */; };
+		02194A0827388D3700D1A9D1 /* AcronymsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02194A0627388D1F00D1A9D1 /* AcronymsRouter.swift */; };
 		02429E492736CCF2009C6DB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02429E482736CCF2009C6DB7 /* AppDelegate.swift */; };
 		02429E4B2736CCF2009C6DB7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02429E4A2736CCF2009C6DB7 /* SceneDelegate.swift */; };
 		02429E4D2736CCF2009C6DB7 /* AcronymsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02429E4C2736CCF2009C6DB7 /* AcronymsViewController.swift */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		02194A04273838D300D1A9D1 /* VariationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariationViewModelTests.swift; sourceTree = "<group>"; };
+		02194A0627388D1F00D1A9D1 /* AcronymsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcronymsRouter.swift; sourceTree = "<group>"; };
 		02429E452736CCF2009C6DB7 /* Acronym.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Acronym.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02429E482736CCF2009C6DB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02429E4A2736CCF2009C6DB7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				02429E852736EFED009C6DB7 /* TableCell */,
 				02429E4C2736CCF2009C6DB7 /* AcronymsViewController.swift */,
 				02429E822736D4A2009C6DB7 /* AcronymsViewModel.swift */,
+				02194A0627388D1F00D1A9D1 /* AcronymsRouter.swift */,
 			);
 			path = Acronyms;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				02429E7B2736CDA3009C6DB7 /* Result.swift in Sources */,
 				02429E8B2737157E009C6DB7 /* VariationViewController.swift in Sources */,
 				02429E7F2736CEF1009C6DB7 /* AcronymHTTPService.swift in Sources */,
+				02194A0827388D3700D1A9D1 /* AcronymsRouter.swift in Sources */,
 				02429E8F27371B49009C6DB7 /* VariationViewInputModel.swift in Sources */,
 				02429E4B2736CCF2009C6DB7 /* SceneDelegate.swift in Sources */,
 				02429E832736D4A2009C6DB7 /* AcronymsViewModel.swift in Sources */,

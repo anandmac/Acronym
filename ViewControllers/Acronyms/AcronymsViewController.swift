@@ -14,36 +14,32 @@ class AcronymsViewController: UIViewController {
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView?
     
     private lazy var viewModel = AcronymsViewModel()
+    private lazy var router = AcronymsRouter(viewController: self)
     
     struct Constants {
         static let cellIdentifier = "AcronymsCell"
         static let nibName = "AcronymsCell"
         static let okButtonTitle = "OK"
-        static let variationVCName = "VariationViewController"
         static let validationErrorText = "Please enter valid text"
+        static let navigationBarTitle = "Acronyms"
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        tableView.register(UINib(nibName: Constants.nibName, bundle: nil), forCellReuseIdentifier: Constants.cellIdentifier)
+        
+        title = Constants.navigationBarTitle
+        configureTableView()
     }
     
     // to hide keyboard when tap on table view
     @IBAction func tapOnTableView() {
-        self.textField.resignFirstResponder()
+        textField.resignFirstResponder()
     }
     
-    func showVariationView(variations: [String]) {
-        let inputModel = VariationViewInputModel(variations: variations)
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        if let variationViewController = storyBoard.instantiateViewController(withIdentifier: Constants.variationVCName) as? VariationViewController {
-            variationViewController.inputModel = inputModel
-            self.present(variationViewController, animated:true, completion:nil)
-        }
+    private func configureTableView() {
+        tableView.register(UINib(nibName: Constants.nibName, bundle: nil), forCellReuseIdentifier: Constants.cellIdentifier)
     }
     
-    // MARK: Private
     private func getAcronyms(for text: String) {
         activityIndicatorView?.startAnimating()
         viewModel.getAcronyms(searchText: text) { [weak self] (error) in
@@ -70,7 +66,7 @@ class AcronymsViewController: UIViewController {
         // create the alert
         let alert = UIAlertController(title: text, message: nil, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: Constants.okButtonTitle, style: UIAlertAction.Style.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
 }
 
@@ -89,6 +85,7 @@ extension AcronymsViewController: UITextFieldDelegate {
         if let text = textField.text, !text.isEmpty {
             viewModel.isValidString(text: text) ? getAcronyms(for: text) : showErrorAlert(text: Constants.validationErrorText)
         }
+        
         return true
     }
 }
@@ -105,13 +102,14 @@ extension AcronymsViewController: UITableViewDataSource {
         
         listCell.variationHandler = { [weak self] in
             if let variations = self?.viewModel.variations(for: indexPath.row) {
-                self?.showVariationView(variations: variations)
+                self?.router.showVariationView(variations: variations)
             }
         }
+        
         return listCell
    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.numberOfAcronyms
+        viewModel.numberOfAcronyms
     }
 }

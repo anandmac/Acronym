@@ -15,13 +15,28 @@ class VariationViewController: UIViewController {
     private lazy var viewModel = VariationViewModel(variations: inputModel.variations)
     
     struct Constants {
-        static let cellIdentifier: String = "VariationCell"
+        static let cellIdentifier = "VariationCell"
+        static let navigationBarTitle = "Variations"
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        setUpNavigationBar()
+        configureTableView()
+    }
+    
+    private func configureTableView() {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: Constants.cellIdentifier)
+    }
+    
+    private func setUpNavigationBar() {
+        title = Constants.navigationBarTitle
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelButtonTapped))
+    }
+    
+    @objc func cancelButtonTapped() {
+        dismiss(animated: true)
     }
 }
 
@@ -37,6 +52,6 @@ extension VariationViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.numberOfVariations
+        viewModel.numberOfVariations
     }
 }

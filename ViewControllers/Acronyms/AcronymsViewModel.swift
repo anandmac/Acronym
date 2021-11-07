@@ -44,6 +44,7 @@ class AcronymsViewModel {
         guard let item = acronyms.first?.lfs[row] else {
             return ("", 0)
         }
+        
         return (item.lf, item.vars.count)
     }
     
@@ -51,6 +52,7 @@ class AcronymsViewModel {
         guard let item = acronyms.first?.lfs[row] else {
             return []
         }
+        
         return item.vars.map { $0.lf }
     }
     

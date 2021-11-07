@@ -27,7 +27,10 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1X-op-8Fz">
-                        <rect key="frame" x="88.5" y="14" width="30" height="14"/>
+                        <rect key="frame" x="88.5" y="14" width="50" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="ofk-rL-5mA"/>
+                        </constraints>
                         <state key="normal" title="0"/>
                         <connections>
                             <action selector="didTapVariation:" destination="5pH-mx-pAt" eventType="touchUpInside" id="CjF-Z8-nH4"/>
@@ -35,15 +38,15 @@
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="n1X-op-8Fz" firstAttribute="bottom" secondItem="AZZ-Nt-jqf" secondAttribute="bottom" id="ApC-N4-hU7"/>
                     <constraint firstAttribute="trailing" secondItem="TYd-Qd-HhK" secondAttribute="trailing" constant="10" id="Bxu-io-OJK"/>
                     <constraint firstItem="AZZ-Nt-jqf" firstAttribute="leading" secondItem="Cf3-YT-Z2j" secondAttribute="leading" constant="10" id="Qzh-YA-Z5l"/>
-                    <constraint firstItem="n1X-op-8Fz" firstAttribute="top" secondItem="AZZ-Nt-jqf" secondAttribute="top" id="YW9-8l-mTe"/>
-                    <constraint firstItem="n1X-op-8Fz" firstAttribute="leading" secondItem="AZZ-Nt-jqf" secondAttribute="trailing" constant="4" id="fo4-p4-sTq"/>
+                    <constraint firstItem="n1X-op-8Fz" firstAttribute="top" secondItem="AZZ-Nt-jqf" secondAttribute="top" id="cm7-vb-bBM"/>
                     <constraint firstItem="TYd-Qd-HhK" firstAttribute="leading" secondItem="Cf3-YT-Z2j" secondAttribute="leading" constant="10" id="gX0-2K-8r0"/>
+                    <constraint firstItem="n1X-op-8Fz" firstAttribute="leading" secondItem="AZZ-Nt-jqf" secondAttribute="trailing" constant="4" id="kWm-0T-pHA"/>
                     <constraint firstItem="AZZ-Nt-jqf" firstAttribute="top" secondItem="TYd-Qd-HhK" secondAttribute="bottom" constant="8" id="nJ6-gd-gUP"/>
                     <constraint firstAttribute="bottom" secondItem="AZZ-Nt-jqf" secondAttribute="bottom" constant="8" id="nVM-fD-yon"/>
                     <constraint firstItem="TYd-Qd-HhK" firstAttribute="top" secondItem="Cf3-YT-Z2j" secondAttribute="top" constant="6" id="vOP-BF-1gp"/>
+                    <constraint firstItem="n1X-op-8Fz" firstAttribute="bottom" secondItem="AZZ-Nt-jqf" secondAttribute="bottom" id="vpy-h0-BYe"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
