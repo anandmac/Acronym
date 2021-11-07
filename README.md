@@ -1,4 +1,4 @@
-By Using this app we get meanings for Acronym.
+By Using this app get the meanings for Acronym.
 
 # Usage Example
 Enter Acronym in the text field then we get the list of meanings for the same.
